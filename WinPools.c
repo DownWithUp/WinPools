@@ -28,7 +28,7 @@ typedef NTSTATUS (WINAPI *fNtQuerySystemInformation)(SYSTEM_INFORMATION_CLASS Sy
 
 int main(int argc, char* argv[]) { 
     printf("WinPools - An example program which leaks kernel big pool information\n");
-    printf("Big Pool = Pools >= 0xFF (4080)\n");
+    printf("Big Pool = Pools >= 0xFF0 (4080)\n");
     printf("----------------------------------------------------------------\n"); // End of intro information
     HANDLE hNtdll = LoadLibraryA("ntdll.dll"); // Load ntdll (99.99% of the time it is already is loaded)
     if (hNtdll == INVALID_HANDLE_VALUE) {
